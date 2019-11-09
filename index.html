@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>probe-rs</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<!-- <link rel="stylesheet" href="css/theme/black.css"> -->
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/fontawesome-all.min.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>probe-rs</h1>
+					<h3>a debugging toolset and library for debugging ARM cores on a separate host</h3>
+				</section>
+				<section>
+					<h3>why?</h3>
+					<ul>
+						<li>suboptimal tooling</li>
+						<li>tooling is Rust-unaware</li>
+						<li>too much time</li>
+					</ul>
+				</section>
+				<section>
+					<h3>
+						what?
+					</h3>
+					<ul>
+						<li>rust library for CoreSight</li>
+						<li>implement the ADI 5.2 specification</li>
+						<li>cargo-flash as a rust idiomatic tool to flash MCUs</li>
+						<li>cli tool to inspect microchip memory and debug them</li>
+						<li>vscode plugin to debug microchips</li>
+					</ul>
+				</section>
+				<section>
+					<h3>current State</h3>
+					<ul>
+						<li>read and write memory from ARM cores</li>
+						<li>support for ST-Link & CMSIS-DAP</li>
+						<li>can halt, step and breakpoint the connected core M0 or M4</li>
+						<li>can flash a binary on to a specific set of MCUS</li>
+						<li>vscode plugin to show stacktrace and variables in scope</li>
+					</ul>
+				</section>
+				<section>
+					<h3>outlook</h3>
+					<ul>
+						<li>parse and run CMSIS-Pack flash algorithm blobs</li>
+						<li>vscode plugin support for breakpoints and SVD based register inspection</li>
+						<li>libjlink support</li>
+						<li>code cleanup, docs, maybe async?</li>
+					</ul>
+				</section>
+				<section>
+					<h3>contribute</h3>
+					<dl>
+						<dt>Matrix, IRC, Twitter</dt>
+						<dd><a href="https://twitter.com/yatekii">@Yatekii</a></dd>
+						<br>
+						<dt>GitHub</dt>
+						<dd><a href="https://github.com/probe-rs/probe-rs">https://github.com/probe-rs/probe-rs</a></dd>
+						<br>
+						<dt>Matrix</dt>
+						<dd><a href="https://matrix.to/#/!vhKMWjizPZBgKeknOo:matrix.org?via=matrix.org&via=spodeli.org">#probe-rs:matrix.org</a></dd>
+					</dl>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

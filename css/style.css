@@ -1,0 +1,15 @@
+html dl dt, html dl dd {
+    display: inline;
+    margin: 0;
+    /* position: absolute;
+    left: 0; */
+}
+
+html dl dt {
+    color: #aa99aa;
+}
+
+
+html dl dt::after {
+    content: ':';
+}
